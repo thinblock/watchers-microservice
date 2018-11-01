@@ -1,5 +1,7 @@
-import { ticker as ethTicker } from './eth_usd';
+import { ticker as ethBinanceTicker, bitfinexTicker as bitfinexEthTicker } from './eth_usd';
+import client from '../../config/bitfinex';
 
 export const start = async () => {
-  await ethTicker();
+  await ethBinanceTicker();
+  await bitfinexEthTicker();
 };

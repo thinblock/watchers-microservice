@@ -19,14 +19,17 @@ const publishMessage = async (TopicArn: string, Message: string) => {
 };
 
 export async function publishActions(jobId: string, actions: any[]) {
-  await Promise.all(actions.map((obj: any) => (
-    publishMessage(
+  await Promise.all(actions.map((obj: any) => {
+    logger.info(oneLine`
+      Publishing action: ${obj.action[0].event_name} with ARN: ${obj.action[0].sns_topic_arn}
+    `);
+    return publishMessage(
       obj.action[0].sns_topic_arn,
       JSON.stringify({
         job_id: jobId
       })
-    )
-  )));
+    );
+  }));
 }
 
 export {

@@ -17,6 +17,7 @@
     "aws-sdk": "^2.295.0",
     "bcrypt": "^3.0.0",
     "binance-api-node": "^0.8.4",
+    "bitfinex-api-node": "^2.0.1",
     "common-tags": "^1.8.0",
     "glob-fs": "^0.1.7",
     "hat": "^0.0.3",
@@ -37,7 +38,6 @@
     "yarn": "^1.9.4"
   },
   "devDependencies": {
-    "@types/redis": "^2.8.6",
     "@types/async": "^2.0.49",
     "@types/bcrypt": "^2.0.0",
     "@types/chai": "^3.4.34",
@@ -47,6 +47,7 @@
     "@types/kue": "^0.11.9",
     "@types/mocha": "^2.2.35",
     "@types/node-uuid": "^0.0.28",
+    "@types/redis": "^2.8.6",
     "@types/restify": "^2.0.36",
     "@types/restify-errors": "^4.3.3",
     "@types/sinon": "^5.0.1",
