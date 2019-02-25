@@ -17,4 +17,4 @@ export const getJobs = async (trigger: string): Promise<any[]> => {
   } catch (e) {
     throw e;
   }
-}
+};

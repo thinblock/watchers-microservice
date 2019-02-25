@@ -28,3 +28,6 @@ logs/
 # Coveralls config (optional)
 .coveralls.yml
 swagger.yml
+
+# Redis dump
+dump.rdb

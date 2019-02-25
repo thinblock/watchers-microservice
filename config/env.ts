@@ -13,7 +13,8 @@ const config = {
   root: path.join(__dirname, '/..'),
   port: 8080,
   db: process.env.TB_WATCHERS_REDIS_DB_STRING,
-  aws_region: process.env.TB_AWS_REGION || 'ap-southeast-1'
+  aws_region: process.env.TB_AWS_REGION || 'ap-southeast-1',
+  ethNode: process.env.TB_ETH_NODE,
 };
 
 const services = {
