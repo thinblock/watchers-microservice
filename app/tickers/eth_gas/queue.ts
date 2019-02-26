@@ -6,8 +6,7 @@ import { getJobs } from '../../../utils/jobs_service';
 import { publishActions } from '../../../utils/helpers';
 
 queue.process('eth-tx-worker', function (job, done) {
-  const jobData = job.data;
-  processJob(jobData)
+  processJob(job.data)
     .then(() => {
       logger.info(oneLine`
         [i] Job (gas price) with QueueId: ${job.id} finished successfully
@@ -48,11 +47,11 @@ async function processJob(data: any) {
 }
 
 function evaluateJobCondition(
-  job: any, eventObj: {diff: number; price: number; event: string; }
+  job: any, eventObj: {diff: number; etherValue: number; event: string; }
 ): boolean {
   try {
     const condition = job.trigger.conditions[0];
-    const price = eventObj.price;
+    const price = eventObj.etherValue;
     if (!condition) {
       return false;
     }
