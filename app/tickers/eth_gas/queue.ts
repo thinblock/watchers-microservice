@@ -5,7 +5,7 @@ import { oneLine } from 'common-tags';
 import { getJobs } from '../../../utils/jobs_service';
 import { publishActions } from '../../../utils/helpers';
 
-queue.process('eth-tx-worker', function (job, done) {
+queue.process('eth-gas-price-worker', function (job, done) {
   processJob(job.data)
     .then(() => {
       logger.info(oneLine`
@@ -80,7 +80,7 @@ function evaluateJobCondition(
 
 export function enqueueJob(data: any) {
   return new Promise<Job>((resolve, reject) => {
-    const job = queue.create('eth-tx-worker', data).save((err: Error) => {
+    const job = queue.create('eth-gas-price-worker', data).save((err: Error) => {
       if (err) {
         return reject(err);
       }
