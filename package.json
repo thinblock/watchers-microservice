@@ -16,6 +16,7 @@
     "await-to-js": "^2.0.1",
     "aws-sdk": "^2.295.0",
     "bcrypt": "^3.0.0",
+    "bignumber.js": "^8.0.2",
     "binance-api-node": "^0.8.4",
     "bitfinex-api-node": "^2.0.1",
     "common-tags": "^1.8.0",
@@ -35,6 +36,7 @@
     "sequelize": "^4.38.0",
     "sns-validator": "^0.3.4",
     "superagent": "^3.8.3",
+    "web3": "1.0.0-beta.34",
     "yarn": "^1.9.4"
   },
   "devDependencies": {
@@ -53,6 +55,7 @@
     "@types/sinon": "^5.0.1",
     "@types/supertest": "^2.0.0",
     "@types/underscore": "^1.8.8",
+    "@types/web3": "^1.0.18",
     "chai": "^3.5.0",
     "coveralls": "^2.11.16",
     "dot-only-hunter": "^1.0.3",
@@ -74,7 +77,8 @@
     "start": "NODE_ENV=development && yarn build && node server.js",
     "serve": "node server.js",
     "hunt": "dot-only-hunter app",
-    "precommit": "lint-staged && npm run build && npm run hunt"
+    "precommit": "lint-staged && npm run build && npm run hunt",
+    "postinstall": "rm -f node_modules/web3/index.d.ts"
   },
   "lint-staged": {
     "*.ts": [
