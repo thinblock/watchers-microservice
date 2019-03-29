@@ -1,3 +1,3 @@
-import { start } from './app/tickers';
+import { start } from './app';
 
 start();

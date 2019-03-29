@@ -11,6 +11,7 @@
     "node": "8.11.2"
   },
   "dependencies": {
+    "@tokenanalyst/sdk": "^1.11.0",
     "add": "^2.0.6",
     "async": "^2.6.1",
     "await-to-js": "^2.0.1",
@@ -27,6 +28,7 @@
     "kue": "^0.11.6",
     "moment": "^2.22.2",
     "node-uuid": "^1.4.8",
+    "pg": "^7.9.0",
     "redis": "^2.8.0",
     "restify": "^4.1.1",
     "restify-await-promise": "^1.0.2",
