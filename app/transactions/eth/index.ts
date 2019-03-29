@@ -15,10 +15,10 @@ export const txStreamETH = async () => {
   const stream = ta.streams.erc20TokenTransfer.subscribe(console.log);
 
   /*Here we start the stream using FOREIGN TABLE from PipelineDB*/
-  const s = 'CREATE FOREIGN TABLE pricestream ( price,toAddress'
+  const s = 'CREATE FOREIGN TABLE pricestream ( price float, toAddress text) SERVER pipelinedb';
 
   /*Here we write the query to filter by amount*/
-  const q = 'CREATE VIEW v WITH (action=materialize) AS SELECT url,count(*) AS total_count, count(DISTINCT cookie) FROM ta GROUP BY toAddress'
+  const q = 'CREATE VIEW v WITH (action=materialize) AS SELECT url,count(*) AS total_count, count(DISTINCT toAddress) FROM ta GROUP BY toAddress';
   
 
   /*Cleans up view v*/
