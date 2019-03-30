@@ -5,3 +5,4 @@ declare module 'restify-logger';
 declare module 'await-to-js';
 declare module 'sns-validator';
 declare module 'bitfinex-api-node';
+declare module '@tokenanalyst/sdk';

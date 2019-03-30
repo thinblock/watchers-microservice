@@ -13,6 +13,8 @@ const config = {
   root: path.join(__dirname, '/..'),
   port: 8080,
   db: process.env.TB_WATCHERS_REDIS_DB_STRING,
+  pgDBPass: process.env.TB_WATCHERS_PG_PASS,
+  pgDBHost: process.env.TB_WATCHERS_PG_HOST,
   aws_region: process.env.TB_AWS_REGION || 'ap-southeast-1',
   ethNode: process.env.TB_ETH_NODE,
 };
