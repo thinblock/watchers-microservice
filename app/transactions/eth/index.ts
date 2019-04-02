@@ -18,10 +18,10 @@ const streamSQL = `
 
 /*Here we write the query to filter by amount*/
 const filterTransactionViewSQL = `
-  CREATE VIEW filter_eth_transactions AS
+  CREATE VIEW filter_address_transactions AS
     SELECT price_usd, price_eth, tx_hash, from_address, to_address, gas_price, gas
-    FROM eth_transactions_stream
-    WHERE price_usd > 100;
+    FROM eth_address_transactions_stream
+    WHERE from_address IN ('0xfa524bc9c0061ead9836933adc491292f6bd1563', '0xb9954de4d4d49dfc5856dcaca8f70d6939e2e407', '0xb4b6b77b5977f53ccc95a140a4d31c1b11e00d1a', '0xd5fb603d8b952c61c07d7b33f8fda989664b6824 ;
 `;
 
 const executeViewSQL = `SELECT * FROM filter_eth_transactions;`;
